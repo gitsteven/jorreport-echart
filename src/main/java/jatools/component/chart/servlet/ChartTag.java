@@ -240,7 +240,7 @@
 /*     */     {
 /*     */       try
 /*     */       {
-/*     */         Bean chartBean;
+/*     */         //Bean chartBean;
 /* 315 */         Class beanClass = Class.forName(this.chartType);
 /* 316 */         Class[] args = new Class[1];
 /* 317 */         args[0] = Class.forName("java.util.Properties");
@@ -253,13 +253,13 @@
 /*     */       {
 /*     */         try
 /*     */         {
-/*     */           Bean chartBean;
+/*     */          // Bean chartBean;
 /* 325 */           Class beanClass = Class.forName(this.chartType);
 /* 326 */           chartBean = (Bean)beanClass.newInstance();
 /*     */         }
 /*     */         catch (Exception e3)
 /*     */         {
-/*     */           Bean chartBean;
+/*     */           //Bean chartBean;
 /* 328 */           this.pageContext.getServletContext().log("chart servlet can't load requested chart class.  Using BarChart instead");
 /* 329 */           chartBean = new barApp(this.style);
 /*     */         }
@@ -329,6 +329,7 @@
 /*     */ 
 /*     */   protected ResourceBundle buildResourceBundle(Bean chartBean)
 /*     */   {
+    ResourceBundle rb;
 /* 410 */     if (this.resourceBundleBaseName == null) {
 /* 411 */       return null;
 /*     */     }
@@ -338,11 +339,11 @@
 /*     */     }
 /*     */     catch (Exception e)
 /*     */     {
-/*     */       ResourceBundle rb;
+/*     */       //ResourceBundle rb;
 /* 417 */       this.pageContext.getServletContext().log("can't load localized chart resources: " + this.resourceBundleBaseName + ", locale " + chartBean.userLocale);
 /* 418 */       return null;
 /*     */     }
-/*     */     ResourceBundle rb;
+/*     */
 /* 420 */     return rb;
 /*     */   }
 /*     */ 

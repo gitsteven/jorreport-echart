@@ -16,7 +16,7 @@
 /*     */ 
 /*     */   public String getDwellLabelXString(Datum dat) {
 /*  28 */     double d = dat.getX();
-/*  29 */     Date myDate = new Date(()d);
+/*  29 */     Date myDate = new Date((long)d);
 /*     */ 
 /*  31 */     String dateString = this.dwellXFormatter.format(myDate);
 /*  32 */     int where = this.dwellXString.indexOf("XX");

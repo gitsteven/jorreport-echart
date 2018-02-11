@@ -410,11 +410,11 @@
 /*  783 */     int count = this.data.size();
 /*      */ 
 /*  785 */     if (xarr.length > count) {
-/*  786 */       for (i = 0; i < count; i++) {
+/*  786 */       for (int i = 0; i < count; i++) {
 /*  787 */         ((Datum)this.data.get(i)).x = xarr[i];
 /*      */       }
 /*      */ 
-/*  790 */       for (i = count; i < xarr.length; i++)
+/*  790 */       for (int i = count; i < xarr.length; i++)
 /*  791 */         this.data.add(new Datum(xarr[i], 0.0D, this.globals));
 /*      */     }
 /*      */     else {
@@ -457,11 +457,11 @@
 /*  849 */     int count = this.data.size();
 /*      */ 
 /*  851 */     if (yarr.length > count) {
-/*  852 */       for (i = 0; i < count; i++) {
+/*  852 */       for (int i = 0; i < count; i++) {
 /*  853 */         ((Datum)this.data.get(i)).y3 = yarr[i];
 /*      */       }
 /*      */ 
-/*  856 */       for (i = count; i < yarr.length; i++)
+/*  856 */       for (int i = count; i < yarr.length; i++)
 /*  857 */         this.data.add(new Datum(0.0D, 0.0D, 0.0D, yarr[i], this.globals));
 /*      */     } else {
 /*  859 */       while (this.data.size() > yarr.length)
@@ -480,11 +480,11 @@
 /*  882 */     int count = this.data.size();
 /*      */ 
 /*  884 */     if (yarr.length > count) {
-/*  885 */       for (i = 0; i < count; i++) {
+/*  885 */       for (int i = 0; i < count; i++) {
 /*  886 */         ((Datum)this.data.get(i)).y = yarr[i];
 /*      */       }
 /*      */ 
-/*  889 */       for (i = count; i < yarr.length; i++)
+/*  889 */       for (int i = count; i < yarr.length; i++)
 /*  890 */         this.data.add(new Datum(0.0D, yarr[i], 0.0D, 0.0D, this.globals));
 /*      */     }
 /*      */     else {

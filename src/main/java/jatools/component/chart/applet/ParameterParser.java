@@ -323,7 +323,7 @@
 /*      */ 
 /*  419 */     String str = getParameter("dataset" + which + "Name");
 /*      */     String setName;
-/*      */     String setName;
+/*      */     //String setName;
 /*  421 */     if (str != null)
 /*  422 */       setName = str;
 /*      */     else {
@@ -1328,7 +1328,7 @@
 /*      */     String str;
 /* 1725 */     while ((str = getLineFromURL(myInputStream)) != null)
 /*      */     {
-/*      */       String str;
+/*      */       //String str;
 /* 1726 */       yArr = getVals(str);
 /* 1727 */       getDatasetParameters(i, xArr, yArr, null, null);
 /* 1728 */       i++;
@@ -1366,7 +1366,7 @@
 /*      */       }
 /*      */       else
 /*      */       {
-/*      */         InputStream myInputStream;
+/*      */         //InputStream myInputStream;
 /* 1773 */         if ((myInputStream = openURL(str)) != null) {
 /* 1774 */           String urlStr = getLineFromURL(myInputStream);
 /* 1775 */           yArr = getVals(urlStr);
@@ -1386,7 +1386,7 @@
 /*      */       }
 /*      */       else
 /*      */       {
-/*      */         InputStream myInputStream;
+/*      */         //InputStream myInputStream;
 /* 1789 */         if ((myInputStream = openURL(str)) != null) {
 /* 1790 */           String urlStr = getLineFromURL(myInputStream);
 /* 1791 */           y2Arr = getVals(urlStr);
@@ -1447,7 +1447,7 @@
 /* 1860 */     closeURL(myInputStream);
 /* 1861 */     int ncolumns = dataBlock[0].length;
 /*      */ 
-/* 1864 */     for (i = 0; i < ncolumns; i += 2) {
+/* 1864 */     for (int i = 0; i < ncolumns; i += 2) {
 /* 1865 */       for (int j = 0; j < nrows; j++) {
 /*      */         try {
 /* 1867 */           xArr[j] = dataBlock[j][i];

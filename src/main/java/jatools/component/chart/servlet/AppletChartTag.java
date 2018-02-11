@@ -109,6 +109,7 @@
 /*     */   }
 /*     */ 
 /*     */   private ResourceBundle buildResourceBundle() {
+    ResourceBundle rb;
 /* 131 */     if (this.resourceBundleBaseName == null) {
 /* 132 */       return null;
 /*     */     }
@@ -118,11 +119,11 @@
 /*     */     }
 /*     */     catch (Exception e)
 /*     */     {
-/*     */       ResourceBundle rb;
+/*     */      // ResourceBundle rb;
 /* 138 */       this.pageContext.getServletContext().log("can't load localized chart resources: " + this.resourceBundleBaseName + ", locale " + this.locale);
 /* 139 */       return null;
 /*     */     }
-/*     */     ResourceBundle rb;
+/*     */
 /* 141 */     return rb;
 /*     */   }
 /*     */ 

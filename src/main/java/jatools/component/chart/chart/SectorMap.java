@@ -488,8 +488,9 @@
 /*     */ 
 /* 746 */     if (hi0 > lo0) {
 /* 747 */       Sector mid = x[((lo0 + hi0) / 2)];
-/* 748 */       for (goto 123; lo <= hi; ) {
-/*     */         do if (lo >= hi0) break; while (Sector.compare(x[lo], mid));
+        /*
+/* 748 */       //for (goto 123; lo <= hi; ) {
+/*     */       //  do if (lo >= hi0) break; while (Sector.compare(x[lo], mid));
 /*     */ 
 /* 751 */         while ((hi > lo0) && (Sector.compare(mid, x[hi])))
 /* 752 */           hi--;
@@ -503,7 +504,8 @@
 /* 760 */         sort(x, lo0, lo - 1);
 /* 761 */       sort(x, hi + 1, hi0);
 /*     */     }
-/*     */   }
+
+/*     */
 /*     */ 
 /*     */   private void sortVector(ArrayList v)
 /*     */   {

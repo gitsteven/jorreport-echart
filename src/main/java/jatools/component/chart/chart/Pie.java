@@ -548,10 +548,14 @@
 /*  648 */     Iterator en = this.labelInfo.iterator();
 /*      */     PieLabelInfo pli;
 /*      */     int i;
-/*  650 */     for (; en.hasNext(); 
-/*  669 */       i < pli.strings.size())
+/*  650 */     for ( i = 0; en.hasNext() ;)
 /*      */     {
 /*  651 */       pli = (PieLabelInfo)en.next();
+                 if(i < pli.strings.size()){
+                     //
+                 }else {
+                     break;
+                 }
 /*      */ 
 /*  653 */       if (this.labelPosition == 2) {
 /*  654 */         this.lineGc.drawLine(g, pli.startPointer, pli.endPointer);
@@ -562,10 +566,10 @@
 /*  659 */       int x = pli.location.x;
 /*  660 */       int y = pli.location.y;
 /*      */ 
-/*  669 */       i = 0; continue;
+/*  669 */       y += ascent;
+/*      */
 /*  670 */       this.lineGc.drawString(g, x, y, (String)pli.strings.get(i));
-/*  671 */       y += ascent;
-/*      */ 
+/*  671 */
 /*  669 */       i++;
 /*      */     }
 /*      */   }
@@ -930,7 +934,8 @@
 /* 1140 */       this.numberFormat = NumberFormat.getInstance();
 /*      */     }
 /* 1142 */     else if (((format instanceof NumberFormat)) && (this.percentFormat == null)) {
-/* 1143 */       ((NumberFormat)format); this.percentFormat = NumberFormat.getPercentInstance();
+/* 1143 */      // ((NumberFormat)format);
+        this.percentFormat = NumberFormat.getPercentInstance();
 /*      */     }
 /*      */   }
 /*      */ 

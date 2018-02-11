@@ -548,7 +548,7 @@
 /*      */     }
 /*      */ 
 /*  693 */     ((SimpleDateFormat)this.dateFormat).applyPattern(this.pattern);
-/*  694 */     this.tmpDate.setTime(()this.axisStart);
+/*  694 */     this.tmpDate.setTime((long)this.axisStart);
 /*  695 */     this.calendar.setTime(this.tmpDate);
 /*  696 */     this.calendar.add(5, (int)(whichLabel * this.stepSize));
 /*  697 */     this.tmpDate = this.calendar.getTime();
@@ -582,7 +582,7 @@
 /*  729 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/*  732 */     this.tmpDate.setTime(()this.axisStart);
+/*  732 */     this.tmpDate.setTime((long)this.axisStart);
 /*  733 */     this.calendar.setTime(this.tmpDate);
 /*  734 */     this.calendar.add(10, (int)(whichLabel * this.stepSize));
 /*  735 */     this.tmpDate = this.calendar.getTime();
@@ -696,7 +696,7 @@
 /*  867 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/*  870 */     this.tmpDate.setTime(()this.axisStart);
+/*  870 */     this.tmpDate.setTime((long)this.axisStart);
 /*  871 */     this.calendar.setTime(this.tmpDate);
 /*  872 */     this.calendar.add(12, (int)(whichLabel * this.stepSize));
 /*  873 */     this.tmpDate = this.calendar.getTime();
@@ -745,7 +745,7 @@
 /*  923 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/*  926 */     this.tmpDate.setTime(()this.axisStart);
+/*  926 */     this.tmpDate.setTime((long)this.axisStart);
 /*  927 */     this.calendar.setTime(this.tmpDate);
 /*  928 */     this.calendar.add(2, (int)(whichLabel * this.stepSize));
 /*  929 */     this.tmpDate = this.calendar.getTime();
@@ -804,10 +804,10 @@
 /*  970 */           increment = boundary; 
 /*      */       }
 /*      */     }
-/*  971 */     return ()increment;
+/*  971 */     return (long)increment;
 /*      */   }
 /*      */   long getPosition(int whichLabel, int itemType) {
-/*  974 */     this.startDate.setTime(()this.axisStart);
+/*  974 */     this.startDate.setTime((long)this.axisStart);
 /*  975 */     this.calendar.setTime(this.startDate);
 /*  976 */     this.calendar.add(itemType, (int)(whichLabel * this.stepSize));
 /*  977 */     return this.calendar.getTime().getTime();
@@ -831,7 +831,7 @@
 /*  999 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/* 1002 */     this.tmpDate.setTime(()this.axisStart);
+/* 1002 */     this.tmpDate.setTime((long)this.axisStart);
 /* 1003 */     this.calendar.setTime(this.tmpDate);
 /* 1004 */     this.calendar.add(14, (int)(whichLabel * this.stepSize));
 /* 1005 */     this.tmpDate = this.calendar.getTime();
@@ -898,7 +898,7 @@
 /* 1077 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/* 1080 */     this.tmpDate.setTime(()this.axisStart);
+/* 1080 */     this.tmpDate.setTime((long)this.axisStart);
 /* 1081 */     this.calendar.setTime(this.tmpDate);
 /* 1082 */     this.calendar.add(3, (int)(whichLabel * this.stepSize));
 /* 1083 */     this.tmpDate = this.calendar.getTime();
@@ -930,7 +930,7 @@
 /* 1112 */         this.dateFormat.setTimeZone(this.timeZone);
 /*      */       }
 /*      */     }
-/* 1115 */     this.tmpDate.setTime(()this.axisStart);
+/* 1115 */     this.tmpDate.setTime((long)this.axisStart);
 /* 1116 */     this.calendar.setTime(this.tmpDate);
 /* 1117 */     this.calendar.add(1, (int)(whichLabel * this.stepSize));
 /* 1118 */     this.tmpDate = this.calendar.getTime();
@@ -943,8 +943,8 @@
 /* 1131 */     if ((nmsets == 0) && ((this.userAxisStart == null) || (this.userAxisEnd == null))) {
 /* 1132 */       return;
 /*      */     }
-/* 1134 */     long hi = ()getMaxValsFromData(nmsets);
-/* 1135 */     long lo = ()getMinValsFromData(nmsets);
+/* 1134 */     long hi = (long)getMaxValsFromData(nmsets);
+/* 1135 */     long lo = (long)getMinValsFromData(nmsets);
 /* 1136 */     if (hi - lo < 10000L)
 /* 1137 */       hi = lo + 86400000L;
 /* 1138 */     long diff = hi - lo;
@@ -1011,13 +1011,13 @@
 /*      */   public void setAxisEnd(double num)
 /*      */   {
 /* 1217 */     super.setAxisEnd(num);
-/* 1218 */     this.endDate.setTime(()num);
+/* 1218 */     this.endDate.setTime((long)num);
 /*      */   }
 /*      */ 
 /*      */   public void setAxisStart(double num)
 /*      */   {
 /* 1226 */     super.setAxisStart(num);
-/* 1227 */     this.startDate.setTime(()num);
+/* 1227 */     this.startDate.setTime((long)num);
 /*      */   }
 /*      */ 
 /*      */   public void setCalendar(Calendar c)
@@ -1109,7 +1109,7 @@
 /* 1364 */       else if (this.scalingType == 2) {
 /* 1365 */         this.stepSize = getSpan(12, this.startDate, this.endDate);
 /*      */       } else {
-/* 1367 */         this.stepSize = (()(this.axisEnd - this.axisStart));
+/* 1367 */         this.stepSize = ((long)(this.axisEnd - this.axisStart));
 /*      */       }
 /* 1369 */       if (this.scalingType != 1) {
 /* 1370 */         switch (whichElement) {

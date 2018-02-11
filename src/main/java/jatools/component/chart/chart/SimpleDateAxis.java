@@ -263,7 +263,7 @@
 /* 375 */       if (this.timeZone != null)
 /* 376 */         this.dateFormat.setTimeZone(this.timeZone);
 /*     */     }
-/* 378 */     this.tmpDate.setTime(this.axisStart + whichLabel * this.stepSize);
+/* 378 */     this.tmpDate.setTime((long)this.axisStart + whichLabel * this.stepSize);
 /* 379 */     return this.dateFormat.format(this.tmpDate);
 /*     */   }
 /*     */ 
@@ -296,7 +296,7 @@
 /*     */ 
 /*     */     }
 /*     */ 
-/* 416 */     this.tmpDate.setTime(()this.axisStart + whichLabel * this.stepSize);
+/* 416 */     this.tmpDate.setTime((long)this.axisStart + whichLabel * this.stepSize);
 /* 417 */     String dayString = null;
 /* 418 */     int hours = this.tmpDate.getHours();
 /* 419 */     if (hours == 0) {
@@ -360,7 +360,7 @@
 /*     */ 
 /*     */   protected String getMinuteLabel(int whichLabel)
 /*     */   {
-/* 494 */     this.tmpDate.setTime(()this.axisStart + whichLabel * this.stepSize);
+/* 494 */     this.tmpDate.setTime((long)this.axisStart + whichLabel * this.stepSize);
 /*     */ 
 /* 499 */     if (this.dateFormat == null) {
 /*     */       try {
@@ -394,7 +394,7 @@
 /*     */       }
 /*     */     }
 /*     */ 
-/* 542 */     this.tmpDate.setTime(()this.axisStart);
+/* 542 */     this.tmpDate.setTime((long)this.axisStart);
 /* 543 */     int curMonths = this.tmpDate.getMonth();
 /* 544 */     int nYears = (int)(whichLabel * this.stepSize + curMonths) / 12;
 /* 545 */     int nMonths = (int)(whichLabel * this.stepSize + curMonths) % 12;
@@ -404,7 +404,7 @@
 /*     */   }
 /*     */ 
 /*     */   long getMonthPosition(int whichLabel) {
-/* 552 */     this.tmpDate.setTime(()this.axisStart);
+/* 552 */     this.tmpDate.setTime((long)this.axisStart);
 /* 553 */     this.tmpDate.setMonth(this.tmpDate.getMonth() + (int)(whichLabel * this.stepSize));
 /* 554 */     return this.tmpDate.getTime();
 /*     */   }
@@ -444,12 +444,12 @@
 /* 577 */           increment = boundary; 
 /*     */       }
 /*     */     }
-/* 578 */     return ()increment;
+/* 578 */     return (long)increment;
 /*     */   }
 /*     */ 
 /*     */   protected String getSecondLabel(int whichLabel)
 /*     */   {
-/* 587 */     this.tmpDate.setTime(()this.axisStart + whichLabel * this.stepSize);
+/* 587 */     this.tmpDate.setTime((long)this.axisStart + whichLabel * this.stepSize);
 /*     */ 
 /* 589 */     if (this.dateFormat == null) {
 /*     */       try {
@@ -512,7 +512,7 @@
 /* 653 */       if (this.timeZone != null)
 /* 654 */         this.dateFormat.setTimeZone(this.timeZone);
 /*     */     }
-/* 656 */     this.tmpDate.setTime(()this.axisStart + whichLabel * this.stepSize);
+/* 656 */     this.tmpDate.setTime((long)this.axisStart + whichLabel * this.stepSize);
 /* 657 */     return this.dateFormat.format(this.tmpDate);
 /*     */   }
 /*     */ 
@@ -547,13 +547,13 @@
 /* 692 */         this.dateFormat.setTimeZone(this.timeZone);
 /*     */       }
 /*     */     }
-/* 695 */     this.tmpDate.setTime(()this.axisStart);
+/* 695 */     this.tmpDate.setTime((long)this.axisStart);
 /* 696 */     this.tmpDate.setYear(this.tmpDate.getYear() + (int)(whichLabel * this.stepSize));
 /* 697 */     return this.dateFormat.format(this.tmpDate);
 /*     */   }
 /*     */ 
 /*     */   long getYearPosition(int whichLabel) {
-/* 701 */     this.tmpDate.setTime(()this.axisStart);
+/* 701 */     this.tmpDate.setTime((long)this.axisStart);
 /* 702 */     this.tmpDate.setYear(this.tmpDate.getYear() + (int)(whichLabel * this.stepSize));
 /* 703 */     return this.tmpDate.getTime();
 /*     */   }
@@ -569,7 +569,7 @@
 /* 725 */       else if (this.scalingType == 7)
 /*     */       {
 /* 727 */         this.stepSize = (this.endDate.getYear() - this.startDate.getYear()); } else {
-/* 728 */         this.stepSize = (()(this.axisEnd - this.axisStart));
+/* 728 */         this.stepSize = ((long)(this.axisEnd - this.axisStart));
 /*     */       }
 /* 730 */       if (whichElement == 2)
 /* 731 */         this.stepSize /= this.numGrids;

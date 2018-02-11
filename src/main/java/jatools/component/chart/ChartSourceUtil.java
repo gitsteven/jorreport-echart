@@ -147,7 +147,8 @@
 /*      */       {
 /*  193 */         datasetName2[i] = ((PlotData)plotData.get(i)).getField();
 /*      */       }
-/*  196 */       for (int i = 0; rowsCursor.hasNext();i < plotData.size())
+/*      */       int i;
+/*  196 */       for ( i = 0; rowsCursor.hasNext() && i <plotData.size();)
 /*      */       {
 /*  197 */         rowsCursor.next();
 /*      */ 
@@ -208,8 +209,7 @@
 /*      */           }
 /*      */ 
 /*  257 */           if (value != null)
-/*  258 */             data[i][rowsCursor.getRow()] = Double.valueOf(
-/*  259 */               value).doubleValue();
+/*  258 */             data[i][rowsCursor.getRow()] = Double.valueOf(value.toString()).doubleValue();
 /*      */         }
 /*      */         else {
 /*  262 */           data[i][rowsCursor.getRow()] = indexOf(stringValues, 

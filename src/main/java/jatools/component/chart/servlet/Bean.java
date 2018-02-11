@@ -371,7 +371,7 @@
 /*  523 */       s = this.dwellXLabelFormat.format(d.getX());
 /*      */     else
 /*  525 */       return this.dwellXLabelFormat.format(new Double(d.getX()));
-/*      */     String s;
+/*      */     //String s;
 /*  528 */     int where = this.dwellXString.indexOf("XX");
 /*      */ 
 /*  530 */     return this.dwellXString.substring(0, where) + s + this.dwellXString.substring(where + 2);
@@ -384,7 +384,7 @@
 /*  540 */       s = this.dwellYLabelFormat.format(d.getY());
 /*      */     else
 /*  542 */       return this.dwellYLabelFormat.format(new Double(d.getY()));
-/*      */     String s;
+/*      */     //String s;
 /*  545 */     int where = this.dwellYString.indexOf("XX");
 /*      */ 
 /*  547 */     return this.dwellYString.substring(0, where) + s + this.dwellYString.substring(where + 2);
@@ -397,7 +397,7 @@
 /*  562 */       s = this.dwellYLabelFormat.format(d.getY2());
 /*      */     else
 /*  564 */       return this.dwellYLabelFormat.format(new Double(d.getY2()));
-/*      */     String s;
+/*      */     //String s;
 /*  567 */     int where = this.dwellY2String.indexOf("XX");
 /*      */ 
 /*  569 */     return this.dwellY2String.substring(0, where) + s + this.dwellY2String.substring(where + 2);
@@ -995,7 +995,9 @@
 /*      */   }
 /*      */ 
 /*      */   public InputStream openURL(String s)
-/*      */   {
+/*      */   {URL myUrl;
+    InputStream myInputStream;
+/*      */     URLConnection connection;
 /* 1350 */     if (this.noisy) {
 /* 1351 */       log("trying to open URL " + s);
 /*      */     }
@@ -1005,27 +1007,26 @@
 /*      */     }
 /*      */     catch (MalformedURLException e)
 /*      */     {
-/*      */       URL myUrl;
+/*      */      // URL myUrl;
 /* 1357 */       log("couldn't open " + s);
 /*      */ 
 /* 1359 */       return openFile(s);
 /*      */     }
 /*      */     try
 /*      */     {
-/*      */       URL myUrl;
-/* 1364 */       URLConnection connection = myUrl.openConnection();
+/*      */
+/* 1364 */        connection = myUrl.openConnection();
 /* 1365 */       connection.setUseCaches(false);
 /* 1366 */       myInputStream = connection.getInputStream();
 /*      */     }
 /*      */     catch (IOException e)
 /*      */     {
-/*      */       InputStream myInputStream;
+/*      */       //InputStream myInputStream;
 /* 1368 */       log("can't open stream " + s);
 /*      */ 
 /* 1370 */       return null;
 /*      */     }
-/*      */     InputStream myInputStream;
-/*      */     URLConnection connection;
+/*      */
 /* 1373 */     return myInputStream;
 /*      */   }
 /*      */ 
@@ -1121,7 +1122,7 @@
 /* 1534 */       options.setProperty("backgroundColor", ChartUtil.toString(gc.getFillColor()));
 /* 1535 */       options.setProperty("backgroundSecondaryColor", 
 /* 1536 */         ChartUtil.toString(gc.getSecondaryFillColor()));
-/* 1537 */       options.setProperty("backgroundGradient", gc.getGradient());
+/* 1537 */       options.setProperty("backgroundGradient", Integer.toString(gc.getGradient()));
 /*      */     }
 /*      */ 
 /* 1543 */     options.setProperty("titleFont", ChartUtil.toString(chart.getBackground().getTitleFont()));
@@ -1144,15 +1145,15 @@
 /* 1560 */       options.setProperty("subTitleString", str);
 /*      */     }
 /*      */ 
-/* 1563 */     options.setProperty("plotAreaLeft", chart.getPlotarea().getLlX());
-/* 1564 */     options.setProperty("plotAreaRight", chart.getPlotarea().getUrX());
-/* 1565 */     options.setProperty("plotAreaTop", chart.getPlotarea().getUrY());
-/* 1566 */     options.setProperty("plotAreaBottom", chart.getPlotarea().getLlY());
+/* 1563 */     options.setProperty("plotAreaLeft", Double.toString(chart.getPlotarea().getLlX()));
+/* 1564 */     options.setProperty("plotAreaRight", Double.toString(chart.getPlotarea().getUrX()));
+/* 1565 */     options.setProperty("plotAreaTop", Double.toString(chart.getPlotarea().getUrY()));
+/* 1566 */     options.setProperty("plotAreaBottom", Double.toString(chart.getPlotarea().getLlY()));
 /*      */ 
 /* 1568 */     if (chart.isThreeD()) {
 /* 1569 */       options.setProperty("threeD", "true");
-/* 1570 */       options.setProperty("XDepth", chart.getXOffset());
-/* 1571 */       options.setProperty("YDepth", chart.getYOffset());
+/* 1570 */       options.setProperty("XDepth", Integer.toString(chart.getXOffset()));
+/* 1571 */       options.setProperty("YDepth", Integer.toString(chart.getYOffset()));
 /*      */     }
 /*      */   }
 /*      */ 
