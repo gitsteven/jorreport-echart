@@ -216,6 +216,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: chart:chart:2.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/chart.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: flash:flash:2.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/flash.jar!/" />
