@@ -41,6 +41,27 @@
             <artifactId>commons-httpclient</artifactId>
             <version>2.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.12</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.15</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
         <!--jor report 相关 本地 jar-->
         <dependency>
             <groupId>barcode4j</groupId>
@@ -70,13 +91,6 @@
             <artifactId>flash</artifactId>
             <version>2.0</version>
             <systemPath>${basedir}/lib/flash.jar</systemPath>
-            <scope>system</scope>
-        </dependency>
-        <dependency>
-            <groupId>itext</groupId>
-            <artifactId>itext</artifactId>
-            <version>2.0</version>
-            <systemPath>${basedir}/lib/itext.jar</systemPath>
             <scope>system</scope>
         </dependency>
 
