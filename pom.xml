@@ -179,6 +179,30 @@
             <scope>system</scope>
         </dependency>
 
+        <dependency>
+            <groupId>DJNativeSwing</groupId>
+            <artifactId>DJNativeSwing</artifactId>
+            <version>2.0</version>
+            <systemPath>${basedir}/lib/DJNativeSwing.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>DJNativeSwing-SWT</groupId>
+            <artifactId>DJNativeSwing-SWT</artifactId>
+            <version>2.0</version>
+            <systemPath>${basedir}/lib/DJNativeSwing-SWT.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>DJNativeSwing-SWTDemo</groupId>
+            <artifactId>DJNativeSwing-SWTDemo</artifactId>
+            <version>2.0</version>
+            <systemPath>${basedir}/lib/DJNativeSwing-SWTDemo.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <resources>

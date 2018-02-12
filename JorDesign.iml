@@ -338,5 +338,32 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: DJNativeSwing:DJNativeSwing:2.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/DJNativeSwing.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: DJNativeSwing-SWT:DJNativeSwing-SWT:2.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/DJNativeSwing-SWT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: DJNativeSwing-SWTDemo:DJNativeSwing-SWTDemo:2.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/DJNativeSwing-SWTDemo.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
